@@ -1,6 +1,9 @@
 "use client";
 
 import {useState} from "react";
+import Image from "next/image";
+import bouquetSoft from "./images/image_2026-04-16_02-13-50.png";
+import bouquetRed from "./images/image_2026-04-16_02-14-59.png";
 
 
 type Petal = { id: number; left: number; delay: number; duration: number; emoji: string };
@@ -31,6 +34,27 @@ const REASONS = [
     {icon: "🌷", text: "Your strength, warmth and endless grace"},
     {icon: "💕", text: "Simply — for being perfectly, wonderfully you"},
     {icon: "🌸", text: "Your beauty and charm"},
+];
+
+const FLOWER_CARDS = [
+    {
+        image: bouquetSoft,
+        alt: "Soft peach roses and blue hydrangeas bouquet",
+        title: "Gentle as you are",
+        text: "Like these soft petals — delicate, beautiful, and impossible not to adore. Every shade reminds me of the quiet tenderness you bring into my life.",
+        accent: "from-blue-100 to-rose-100",
+        titleColor: "text-rose-800",
+        textColor: "text-rose-900",
+    },
+    {
+        image: bouquetRed,
+        alt: "Deep crimson peony tulips bouquet",
+        title: "Passionately, deeply, yours",
+        text: "Bold, full of life, and breathtakingly beautiful — just like the love I have for you. Rich, deep, and more wonderful with every passing day.",
+        accent: "from-rose-100 to-red-100",
+        titleColor: "text-rose-800",
+        textColor: "text-rose-900",
+    },
 ];
 
 /* ── Envelope / Letter ──────────────────────────────────────── */
@@ -158,6 +182,40 @@ export default function Home() {
                         </li>
                     ))}
                 </ul>
+            </section>
+
+            {/* ── Flower cards ── */}
+            <section className="relative z-10 w-full max-w-3xl px-6 mt-16 animate-fade-up-4">
+                <h2 className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10">
+                    Flowers for you 🌸
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                    {FLOWER_CARDS.map(({image, alt, title, text, accent, titleColor, textColor}, i) => (
+                        <div
+                            key={i}
+                            className={`rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b ${accent} transition-transform duration-300 hover:-translate-y-2 hover:shadow-rose-200`}
+                        >
+                            {/* Photo */}
+                            <div className="relative w-full aspect-square">
+                                <Image
+                                    src={image}
+                                    alt={alt}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover"
+                                    placeholder="blur"
+                                />
+                            </div>
+
+                            {/* Text */}
+                            <div className="p-6">
+                                <h3 className={`text-xl font-bold mb-3 ${titleColor}`}>{title}</h3>
+                                <p className={`text-sm md:text-base leading-relaxed ${textColor}`}>{text}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </section>
 
             {/* ── Quote ── */}
