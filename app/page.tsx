@@ -259,7 +259,7 @@ export default function Home() {
                         />
                         {/* Dark gradient overlay so text is readable */}
                         <div
-                            className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-transparent"/>
+                            className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-slate-900/40"/>
                     </div>
 
                     {/* Snowflakes scattered over photo */}
