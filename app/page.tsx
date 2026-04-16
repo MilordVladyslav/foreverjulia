@@ -244,25 +244,137 @@ export default function Home() {
                 </div>
             </section>
 
+            {/*<section className="relative z-10 w-full max-w-3xl px-6 mt-14 animate-fade-up-4">*/}
+
+            {/*    /!* Winter photo with overlay *!/*/}
+            {/*    <div className="relative rounded-3xl overflow-hidden shadow-2xl">*/}
+            {/*        <div className="relative w-full aspect-[4/3]">*/}
+            {/*            <Image*/}
+            {/*                src={winterPark}*/}
+            {/*                alt="Winter city park at sunset"*/}
+            {/*                fill*/}
+            {/*                sizes="(max-width: 768px) 100vw, 768px"*/}
+            {/*                className="object-cover"*/}
+            {/*                placeholder="blur"*/}
+            {/*            />*/}
+            {/*            /!* Dark gradient overlay so text is readable *!/*/}
+            {/*            <div*/}
+            {/*                className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-slate-900/400"/>*/}
+            {/*        </div>*/}
+
+            {/*        /!* Snowflakes scattered over photo *!/*/}
+            {/*        {["❄️", "❄️", "❄️", "❄️", "❄️", "❄️"].map((s, i) => (*/}
+            {/*            <span*/}
+            {/*                key={i}*/}
+            {/*                className="absolute text-white/50 select-none animate-float pointer-events-none"*/}
+            {/*                style={{*/}
+            {/*                    top: `${[10, 20, 8, 35, 15, 28][i]}%`,*/}
+            {/*                    left: `${[8, 25, 55, 72, 88, 42][i]}%`,*/}
+            {/*                    fontSize: `${[1.1, 0.8, 1.4, 0.9, 1.2, 0.7][i]}rem`,*/}
+            {/*                    animationDelay: `${[0, 1.2, 0.5, 1.8, 0.9, 2.2][i]}s`,*/}
+            {/*                    animationDuration: `${[4, 5, 3.5, 4.5, 3.8, 5.2][i]}s`,*/}
+            {/*                }}*/}
+            {/*            >*/}
+            {/*                    {s}*/}
+            {/*                </span>*/}
+            {/*        ))}*/}
+
+            {/*        /!* Poem overlay — bottom of photo *!/*/}
+            {/*        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 text-center">*/}
+            {/*            <p*/}
+            {/*                className="shimmer-text text-3xl md:text-4xl mb-6"*/}
+            {/*            >*/}
+            {/*                A Winter Love ❄️*/}
+            {/*            </p>*/}
+
+            {/*            <div*/}
+            {/*                className="text-white/90 text-base md:text-lg leading-7 italic drop-shadow-lg"*/}
+            {/*            >*/}
+            {/*                <p>The snow fell soft on frozen ground,</p>*/}
+            {/*                <p>and in that hush, I heard the sound</p>*/}
+            {/*                <p>of something warm inside the cold —</p>*/}
+            {/*                <p>a quiet love that can't be told.</p>*/}
+
+            {/*                <p className="mt-5">We walked through parks of silver-white,</p>*/}
+            {/*                <p>the bare trees framed in golden light,</p>*/}
+            {/*                <p>and every breath of winter air</p>*/}
+            {/*                <p>was sweeter, Julia, because you were there.</p>*/}
+
+            {/*                <p className="mt-5">Let winters come and seasons turn —</p>*/}
+            {/*                <p>beside you, I will always burn</p>*/}
+            {/*                <p>with something warmer than the sun:</p>*/}
+            {/*                <p>a love that's only just begun.</p>*/}
+            {/*            </div>*/}
+
+            {/*            <p className="text-white/60 text-sm mt-6 tracking-wider">— forever yours 💕</p>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
+
+            {/* ── Poetry ── */}
             <section className="relative z-10 w-full max-w-3xl px-6 mt-14 animate-fade-up-4">
 
-                {/* Winter photo with overlay */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                {/* ── Mobile: CSS winter background (no photo) ── */}
+                <div
+                    className="block md:hidden relative rounded-3xl overflow-hidden shadow-2xl p-8 text-center"
+                    style={{
+                        background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 40%, #1e293b 70%, #0f172a 100%)",
+                    }}
+                >
+                    {/* Snowflakes */}
+                    {["❄️", "❄️", "❄️", "❄️", "❄️", "❄️"].map((s, i) => (
+                        <span
+                            key={i}
+                            className="absolute text-white/40 select-none animate-float pointer-events-none"
+                            style={{
+                                top: `${[8, 18, 6, 32, 12, 25][i]}%`,
+                                left: `${[6, 22, 52, 70, 86, 40][i]}%`,
+                                fontSize: `${[1.1, 0.8, 1.4, 0.9, 1.2, 0.7][i]}rem`,
+                                animationDelay: `${[0, 1.2, 0.5, 1.8, 0.9, 2.2][i]}s`,
+                                animationDuration: `${[4, 5, 3.5, 4.5, 3.8, 5.2][i]}s`,
+                            }}
+                        >
+                                {s}
+                            </span>
+                    ))}
+                    {/* Faint moon glow */}
+                    <div
+                        className="absolute top-4 right-8 w-16 h-16 rounded-full bg-amber-100/10 blur-2xl pointer-events-none"/>
+
+                    <p className="shimmer-text text-3xl mb-6">A Winter Love ❄️</p>
+                    <div className="text-white/85 text-base leading-7 italic drop-shadow-lg space-y-1">
+                        <p>The snow fell soft on frozen ground,</p>
+                        <p>and in that hush, I heard the sound</p>
+                        <p>of something warm inside the cold —</p>
+                        <p>a quiet love that can&apos;t be told.</p>
+                        <p className="mt-5">We walked through parks of silver-white,</p>
+                        <p>the bare trees framed in golden light,</p>
+                        <p>and every breath of winter air</p>
+                        <p>was sweeter, Julia, because you were there.</p>
+                        <p className="mt-5">Let winters come and seasons turn —</p>
+                        <p>beside you, I will always burn</p>
+                        <p>with something warmer than the sun:</p>
+                        <p>a love that&apos;s only just begun.</p>
+                    </div>
+                    <p className="text-white/50 text-sm mt-6 tracking-wider">— forever yours 💕</p>
+                </div>
+
+                {/* ── Desktop: real winter photo ── */}
+                <div className="hidden md:block relative rounded-3xl overflow-hidden shadow-2xl">
                     <div className="relative w-full aspect-[4/3]">
                         <Image
                             src={winterPark}
                             alt="Winter city park at sunset"
                             fill
-                            sizes="(max-width: 768px) 100vw, 768px"
+                            sizes="768px"
                             className="object-cover"
                             placeholder="blur"
                         />
-                        {/* Dark gradient overlay so text is readable */}
                         <div
-                            className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-slate-900/40"/>
+                            className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-800/60 to-slate-900/20"/>
                     </div>
 
-                    {/* Snowflakes scattered over photo */}
+                    {/* Snowflakes */}
                     {["❄️", "❄️", "❄️", "❄️", "❄️", "❄️"].map((s, i) => (
                         <span
                             key={i}
@@ -279,33 +391,22 @@ export default function Home() {
                             </span>
                     ))}
 
-                    {/* Poem overlay — bottom of photo */}
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 text-center">
-                        <p
-                            className="shimmer-text text-3xl md:text-4xl mb-6"
-                        >
-                            A Winter Love ❄️
-                        </p>
-
-                        <div
-                            className="text-white/90 text-base md:text-lg leading-7 italic drop-shadow-lg"
-                        >
+                        <p className="shimmer-text text-3xl md:text-4xl mb-6">A Winter Love ❄️</p>
+                        <div className="text-white/90 text-base md:text-lg leading-7 italic drop-shadow-lg">
                             <p>The snow fell soft on frozen ground,</p>
                             <p>and in that hush, I heard the sound</p>
                             <p>of something warm inside the cold —</p>
-                            <p>a quiet love that can't be told.</p>
-
+                            <p>a quiet love that can&apos;t be told.</p>
                             <p className="mt-5">We walked through parks of silver-white,</p>
                             <p>the bare trees framed in golden light,</p>
                             <p>and every breath of winter air</p>
                             <p>was sweeter, Julia, because you were there.</p>
-
                             <p className="mt-5">Let winters come and seasons turn —</p>
                             <p>beside you, I will always burn</p>
                             <p>with something warmer than the sun:</p>
-                            <p>a love that's only just begun.</p>
+                            <p>a love that&apos;s only just begun.</p>
                         </div>
-
                         <p className="text-white/60 text-sm mt-6 tracking-wider">— forever yours 💕</p>
                     </div>
                 </div>
