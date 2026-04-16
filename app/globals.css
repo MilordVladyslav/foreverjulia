@@ -1,66 +1,115 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff0f3;
-  --foreground: #5c0a1e;
+    --background: #fff0f3;
+    --foreground: #5c0a1e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-display: var(--font-letta-rillok);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Georgia, serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Georgia, serif;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50%       { transform: translateY(-20px) rotate(4deg); }
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(4deg);
+    }
 }
 
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  30%       { transform: scale(1.15); }
-  60%       { transform: scale(1.05); }
+    0%, 100% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.15);
+    }
+    60% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
 }
 
 @keyframes fall {
-  0%   { transform: translateY(-10vh) rotate(0deg);   opacity: 1; }
-  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-.animate-float      { animation: float     4s ease-in-out infinite; }
-.animate-heartbeat  { animation: heartbeat 2s ease-in-out infinite; }
-.animate-fade-up    { animation: fade-up   0.8s ease-out both; }
-.animate-fade-up-1  { animation: fade-up   0.8s ease-out 0.2s both; }
-.animate-fade-up-2  { animation: fade-up   0.8s ease-out 0.4s both; }
-.animate-fade-up-3  { animation: fade-up   0.8s ease-out 0.6s both; }
-.animate-fade-up-4  { animation: fade-up   0.8s ease-out 0.8s both; }
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.animate-fade-up {
+    animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-1 {
+    animation: fade-up 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-up-2 {
+    animation: fade-up 0.8s ease-out 0.4s both;
+}
+
+.animate-fade-up-3 {
+    animation: fade-up 0.8s ease-out 0.6s both;
+}
+
+.animate-fade-up-4 {
+    animation: fade-up 0.8s ease-out 0.8s both;
+}
 
 .shimmer-text {
-  background: linear-gradient(90deg, #9f1239 0%, #fb7185 40%, #fda4af 60%, #9f1239 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3.5s linear infinite;
+    background: linear-gradient(90deg, #9f1239 0%, #fb7185 40%, #fda4af 60%, #9f1239 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3.5s linear infinite;
+    font-family: var(--font-letta-rillok), Georgia, serif;
+    font-style: italic;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(251, 113, 133, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(251, 113, 133, 0.25);
 }

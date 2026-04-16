@@ -1,34 +1,26 @@
-import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import type {Metadata} from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
-const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
+const lettaRillok = localFont({
+    src: "./fonts/LettaRillokCyrillic-Script.woff2",
+    variable: "--font-letta-rillok",
+    display: "swap",
+    style: "italic",
+    weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Forever Julia 💕",
-  description: "A Valentine's Day message, just for you.",
+    title: "Forever Julia 💕",
+    description: "A Valentine's Day message, just for you.",
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-      <html
-          lang="en"
-          className={`${playfair.variable} ${lato.variable} h-full antialiased`}
-      >
-      <body className="min-h-full flex flex-col">{children}</body>
-      </html>
-  );
+                                       children,
+                                   }: Readonly<{ children: React.ReactNode }>) {
+    return (
+        <html lang="en" className={lettaRillok.variable}>
+        <body className="min-h-screen">{children}</body>
+        </html>
+    );
 }

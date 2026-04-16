@@ -149,7 +149,12 @@ export default function Home() {
                         <p className="text-rose-400 text-xs uppercase tracking-widest font-semibold mb-6">
                             A letter from my heart 💌
                         </p>
-                        <p className="text-rose-900 text-2xl font-semibold mb-4">My dearest Julia,</p>
+                        <p
+                            className="text-rose-900 text-2xl font-semibold mb-4"
+                            style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                        >
+                            My dearest Julia,
+                        </p>
                         <p className="text-rose-800 text-base md:text-lg leading-loose mb-4">
                             Some love stories start with a glance — ours started with something rarer: a quiet certainty
                             that the world was gentler, warmer, and more beautiful with you in it.
@@ -167,7 +172,10 @@ export default function Home() {
 
             {/* ── Reasons ── */}
             <section className="relative z-10 w-full max-w-3xl px-6 animate-fade-up-3">
-                <h2 className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-8">
+                <h2
+                    className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-8"
+                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                >
                     Why I love you 🌷
                 </h2>
 
@@ -186,7 +194,10 @@ export default function Home() {
 
             {/* ── Flower cards ── */}
             <section className="relative z-10 w-full max-w-3xl px-6 mt-16 animate-fade-up-4">
-                <h2 className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10">
+                <h2
+                    className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
+                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                >
                     Flowers for you 🌸
                 </h2>
 

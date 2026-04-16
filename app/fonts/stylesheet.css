@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Letta Rillok Cyrillic Script';
+    src: url('LettaRillokCyrillic-Script.eot');
+    src: local('Letta Rillok Cyrillic Script'), local('LettaRillokCyrillic-Script'),
+    url('LettaRillokCyrillic-Script.eot?#iefix') format('embedded-opentype'),
+    url('LettaRillokCyrillic-Script.woff2') format('woff2'),
+    url('LettaRillokCyrillic-Script.woff') format('woff'),
+    url('LettaRillokCyrillic-Script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Letta Rillok Symbols Symbols';
+    src: url('LettaRillokSymbols-Symbols.eot');
+    src: local('Letta Rillok Symbols Symbols'), local('LettaRillokSymbols-Symbols'),
+    url('LettaRillokSymbols-Symbols.eot?#iefix') format('embedded-opentype'),
+    url('LettaRillokSymbols-Symbols.woff2') format('woff2'),
+    url('LettaRillokSymbols-Symbols.woff') format('woff'),
+    url('LettaRillokSymbols-Symbols.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
