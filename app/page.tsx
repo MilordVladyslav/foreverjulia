@@ -125,6 +125,7 @@ export default function Home() {
                     Forever Julia
                 </h1>
 
+
                 <p className="text-rose-700 text-lg md:text-xl font-light max-w-md mt-4 leading-relaxed animate-fade-up-1">
                     Happy Valentine's Day, my love.
                     <br/>
@@ -150,12 +151,16 @@ export default function Home() {
                             A letter from my heart 💌
                         </p>
                         <p
-                            className="text-rose-900 text-2xl font-semibold mb-4"
+                            className="text-cursive text-rose-900 text-6xl font-semibold mb-4"
                             style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                         >
                             My dearest Julia,
                         </p>
-                        <p className="text-rose-800 text-base md:text-lg leading-loose mb-4">
+                        <p
+                            className="text-rose-800 text-6xl leading-8 mb-4"
+                            style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                        >
+
                             Some love stories start with a glance — ours started with something rarer: a quiet certainty
                             that the world was gentler, warmer, and more beautiful with you in it.
                         </p>
@@ -196,7 +201,6 @@ export default function Home() {
             <section className="relative z-10 w-full max-w-3xl px-6 mt-16 animate-fade-up-4">
                 <h2
                     className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
-                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                 >
                     Flowers for you 🌸
                 </h2>

@@ -8,7 +8,7 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-display: var(--font-letta-rillok);
+    /*--font-display: var(--font-letta-rillok);*/
 }
 
 body {
@@ -104,6 +104,11 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 3.5s linear infinite;
+    font-family: Georgia, serif;
+
+}
+
+.cursive-text {
     font-family: var(--font-letta-rillok), Georgia, serif;
     font-style: italic;
 }
