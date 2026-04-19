@@ -65,13 +65,13 @@ const MOMENTS = [
         image: flamedCoffee,
         alt: "Two flamed Irish coffees glowing in the dark",
         title: "Warmth in every sip",
-        text: "Even on the coldest evenings, everything feels warm when we are together. These little flames — just like us — burning bright in the dark.",
+        text: "Кава чи вино, мені все одно",
     },
     {
         image: wineToast,
         alt: "Two wine glasses clinking at a restaurant",
         title: "Here's to us",
-        text: "Every toast is a promise — to more evenings like this, more laughter, more love. To us, always.",
+        text: "Аби це з тобою, милуватись красою",
     },
 ];
 
@@ -102,22 +102,22 @@ function AreYouMine() {
                         className="shimmer-text text-3xl md:text-4xl font-bold mb-3"
                         style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                     >
-                        I knew it! 🌹
+                        Я знав це! 🌹
                     </p>
                     <p className="text-rose-700 text-lg mt-2">
-                        Forever and always, my love. 💕
+                        Вдячний за увагу! 💕
                     </p>
                 </div>
             ) : (
                 <>
                     <p
-                        className="text-rose-800 text-2xl md:text-3xl font-bold mb-2"
+                        className="text-rose-800 text-2xl md:text-4xl font-bold mb-2"
                         style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                     >
-                        Will you be mine? 💌
+                        Запрошую на побачення в Макдональдс 💌
                     </p>
                     <p className="text-rose-600 text-base mb-10">
-                        Choose wisely — only one answer is correct 😉
+                        Думай - Лише одна відповідь правильна 😉
                     </p>
 
                     {/* Button arena — fixed height so the No button has room to roam */}
@@ -134,7 +134,7 @@ function AreYouMine() {
                                 boxShadow: "0 4px 18px rgba(225,29,72,0.35)",
                             }}
                         >
-                            Yes! 💕
+                            Так! 💕
                         </button>
 
                         {/* No — runs away on hover */}
@@ -152,7 +152,7 @@ function AreYouMine() {
                                 transition: "top 0s, left 0s", // instant jump — no easing
                             }}
                         >
-                            No 🙈
+                            Ні
                         </button>
                     </div>
                 </>
@@ -305,7 +305,7 @@ function MomentSlideshow() {
                     className="text-xl md:text-2xl font-bold text-rose-800 mb-3"
                     style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                 >
-                    {slide.title}
+                    🩷
                 </h3>
                 <p className="text-rose-900 text-sm md:text-base leading-relaxed">
                     {slide.text}
@@ -480,7 +480,7 @@ export default function Home() {
                 <h2
                     className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
                 >
-                    Flowers for you 🌸
+                    Далеко не останні квіти для тебе 🌸
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-8">
@@ -619,20 +619,23 @@ export default function Home() {
                     <div
                         className="absolute top-4 right-8 w-16 h-16 rounded-full bg-amber-100/10 blur-2xl pointer-events-none"/>
 
-                    <p className="shimmer-text text-3xl mb-6">A Winter Love ❄️</p>
-                    <div className="text-white/85 text-base leading-7 italic drop-shadow-lg space-y-1">
-                        <p>The snow fell soft on frozen ground,</p>
-                        <p>and in that hush, I heard the sound</p>
-                        <p>of something warm inside the cold —</p>
-                        <p>a quiet love that can&apos;t be told.</p>
-                        <p className="mt-5">We walked through parks of silver-white,</p>
-                        <p>the bare trees framed in golden light,</p>
-                        <p>and every breath of winter air</p>
-                        <p>was sweeter, Julia, because you were there.</p>
-                        <p className="mt-5">Let winters come and seasons turn —</p>
-                        <p>beside you, I will always burn</p>
-                        <p>with something warmer than the sun:</p>
-                        <p>a love that&apos;s only just begun.</p>
+                    <p className="shimmer-text text-3xl mb-6">Найтепліша холодна зима ❄️</p>
+                    <div className="text-white/90 text-base md:text-lg leading-7 italic drop-shadow-lg">
+                        <p>знаємо лише ти і я</p>
+                        <p>та чудова мить, будучи удвох,</p>
+                        <p>що звело нас обох?</p>
+                        <p className="mt-5">Години проведені з тобою,</p>
+                        <p>Тією холодною порою,</p>
+                        <p>Мрії, надії та романтизм,</p>
+                        <p>Справжнє, без призм.</p>
+                        <p className="mt-5">Ти не одна з багатьох,</p>
+                        <p>Моя причина радощів, тривог,</p>
+                        <p>Ти єдина завжди,</p>
+                        <p>Тільки ти не мовчи.</p>
+                        <p className="mt-5">Минуть місяць,</p>
+                        <p>пройдуть роки,</p>
+                        <p>І чекатиме знову вона,</p>
+                        <p>Найтепліша холодна зима</p>
                     </div>
                     <p className="text-white/50 text-sm mt-6 tracking-wider">— forever yours 💕</p>
                 </div>
@@ -670,22 +673,25 @@ export default function Home() {
                     ))}
 
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 text-center">
-                        <p className="shimmer-text text-3xl md:text-4xl mb-6">A Winter Love ❄️</p>
-                        <div className="text-white/90 text-base md:text-lg leading-7 italic drop-shadow-lg">
-                            <p>The snow fell soft on frozen ground,</p>
-                            <p>and in that hush, I heard the sound</p>
-                            <p>of something warm inside the cold —</p>
-                            <p>a quiet love that can&apos;t be told.</p>
-                            <p className="mt-5">We walked through parks of silver-white,</p>
-                            <p>the bare trees framed in golden light,</p>
-                            <p>and every breath of winter air</p>
-                            <p>was sweeter, Julia, because you were there.</p>
-                            <p className="mt-5">Let winters come and seasons turn —</p>
-                            <p>beside you, I will always burn</p>
-                            <p>with something warmer than the sun:</p>
-                            <p>a love that&apos;s only just begun.</p>
+                        <p className="shimmer-text text-3xl md:text-4xl mb-6">Найтепліша холодна зима ❄️</p>
+                        <div className="text-white/90 text-base md:text-lg leading-5 italic drop-shadow-lg">
+                            <p>знаємо лише ти і я</p>
+                            <p>та чудова мить, будучи удвох,</p>
+                            <p>що звело нас обох?</p>
+                            <p className="mt-5">Години проведені з тобою,</p>
+                            <p>Тією холодною порою,</p>
+                            <p>Мрії, надії та романтизм,</p>
+                            <p>Справжнє, без призм.</p>
+                            <p className="mt-5">Ти не одна з багатьох,</p>
+                            <p>Моя причина радощів, тривог,</p>
+                            <p>Ти єдина завжди,</p>
+                            <p>Тільки ти не мовчи.</p>
+                            <p className="mt-5">Минуть місяць,</p>
+                            <p>пройдуть роки,</p>
+                            <p>І чекатиме знову вона,</p>
+                            <p>Найтепліша холодна зима</p>
                         </div>
-                        <p className="text-white/60 text-sm mt-6 tracking-wider">— forever yours 💕</p>
+                        <p className="text-white/60 text-sm mt-6 tracking-wider">- Назавжди твій 💕</p>
                     </div>
                 </div>
             </section>
@@ -696,7 +702,7 @@ export default function Home() {
                     className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
                     style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                 >
-                    Our moments 🕯️
+                    Я з тобою 🕯️
                 </h2>
                 <MomentSlideshow/>
             </section>
@@ -704,10 +710,10 @@ export default function Home() {
 
             <section className="relative z-10 w-full max-w-xl px-6 mt-16 animate-fade-up-4">
                 <h2
-                    className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
+                    className="text-center text-3xl md:text-6xl font-bold text-rose-800 mb-10"
                     style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                 >
-                    One last question 💭
+                    Одне, неостаннє питання 💭
                 </h2>
                 <AreYouMine/>
             </section>
@@ -715,7 +721,7 @@ export default function Home() {
 
             {/* ── Footer ── */}
             <footer className="relative z-10 mt-14 text-rose-400 text-sm text-center animate-fade-up-4">
-                Made with 💕 just for you · Valentine's Day 2026
+                Зроблено з коханням 💕 Тільки для тебе · Владислав · 2026
             </footer>
         </main>
     );
