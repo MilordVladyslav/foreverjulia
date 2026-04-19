@@ -637,7 +637,7 @@ export default function Home() {
                         <p>І чекатиме знову вона,</p>
                         <p>Найтепліша холодна зима</p>
                     </div>
-                    <p className="text-white/50 text-sm mt-6 tracking-wider">— forever yours 💕</p>
+                    <p className="text-white/50 text-sm mt-6 tracking-wider">- Назавжди твій 💕</p>
                 </div>
 
                 {/* ── Desktop: real winter photo ── */}
