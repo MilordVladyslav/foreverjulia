@@ -514,7 +514,7 @@ export default function Home() {
             {/* ── Quote ── */}
             <section className="relative z-10 w-full max-w-xl px-6 mt-14 animate-fade-up-4">
                 <div className="glass-card rounded-3xl p-8 text-center shadow-xl">
-                    <p className="text-rose-300 text-4xl mb-4">"</p>
+                    <p className="text-rose-300 text-4xl mb-4">&#34;</p>
                     <p className="text-rose-800 text-lg md:text-xl italic leading-relaxed">
                         Ти - моя причина, надія, спогад, муза, та досягнення
                     </p>
