@@ -1,10 +1,12 @@
 "use client";
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 import bouquetSoft from "./images/image_2026-04-16_02-13-50.png";
 import bouquetRed from "./images/image_2026-04-16_02-14-59.png";
 import winterPark from "./images/photo_2026-04-16_04-45-20.jpg";
+import flamedCoffee from "./images/image_2026-04-16_04-18-47.png";
+import wineToast from "./images/photo_2026-04-16_04-27-59.jpg";
 
 type Petal = { id: number; left: number; delay: number; duration: number; emoji: string };
 
@@ -56,6 +58,104 @@ const FLOWER_CARDS = [
         textColor: "text-rose-900",
     },
 ];
+
+
+const MOMENTS = [
+    {
+        image: flamedCoffee,
+        alt: "Two flamed Irish coffees glowing in the dark",
+        title: "Warmth in every sip",
+        text: "Even on the coldest evenings, everything feels warm when we are together. These little flames — just like us — burning bright in the dark.",
+    },
+    {
+        image: wineToast,
+        alt: "Two wine glasses clinking at a restaurant",
+        title: "Here's to us",
+        text: "Every toast is a promise — to more evenings like this, more laughter, more love. To us, always.",
+    },
+];
+
+/* ── Slideshow component ── */
+function MomentSlideshow() {
+    const [current, setCurrent] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    function goTo(index: number) {
+        setVisible(false);
+        setTimeout(() => {
+            setCurrent(index);
+            setVisible(true);
+        }, 350);
+    }
+
+    // Auto-advance every 5 seconds
+    useEffect(() => {
+        const t = setInterval(() => {
+            goTo((current + 1) % MOMENTS.length);
+        }, 5000);
+        return () => clearInterval(t);
+    }, [current]);
+
+    const slide = MOMENTS[current];
+
+    return (
+        <div className="rounded-3xl overflow-hidden shadow-2xl glass-card">
+            {/* Photo */}
+            <div
+                className={`relative w-full aspect-[4/3] transition-opacity duration-350 ${visible ? "opacity-100" : "opacity-0"}`}
+                style={{transition: "opacity 0.35s ease-in-out"}}
+            >
+                <Image
+                    key={current}
+                    src={slide.image}
+                    alt={slide.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 672px"
+                    className="object-cover"
+                    placeholder="blur"
+                />
+            </div>
+
+            {/* Text */}
+            <div
+                className="p-6 text-center"
+                style={{
+                    opacity: visible ? 1 : 0,
+                    transition: "opacity 0.35s ease-in-out",
+                }}
+            >
+                <h3
+                    className="text-xl md:text-2xl font-bold text-rose-800 mb-3"
+                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                >
+                    {slide.title}
+                </h3>
+                <p className="text-rose-900 text-sm md:text-base leading-relaxed">
+                    {slide.text}
+                </p>
+            </div>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-3 pb-6">
+                {MOMENTS.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => goTo(i)}
+                        aria-label={`Go to slide ${i + 1}`}
+                        className="cursor-pointer rounded-full transition-all duration-300"
+                        style={{
+                            width: i === current ? "1.75rem" : "0.6rem",
+                            height: "0.6rem",
+                            background: i === current
+                                ? "linear-gradient(90deg, #e11d48, #fb7185)"
+                                : "rgba(251,113,133,0.35)",
+                        }}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
 
 /* ── Envelope / Letter ──────────────────────────────────────── */
 function Envelope({onOpen}: { onOpen: () => void }) {
@@ -411,6 +511,18 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+
+            <section className="relative z-10 w-full max-w-xl px-6 mt-16 animate-fade-up-4">
+                <h2
+                    className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
+                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                >
+                    Our moments 🕯️
+                </h2>
+                <MomentSlideshow/>
+            </section>
+
 
             {/* ── Footer ── */}
             <footer className="relative z-10 mt-14 text-rose-400 text-sm text-center animate-fade-up-4">
