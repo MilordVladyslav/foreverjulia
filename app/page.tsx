@@ -30,20 +30,20 @@ function usePetals(count = 18) {
 
 /* ── Reasons list ───────────────────────────────────────────── */
 const REASONS = [
-    {icon: "🌟", text: "Your laugh makes everything brighter"},
-    {icon: "🤍", text: "The way you care so deeply for others"},
-    {icon: "✨", text: "How you turn ordinary days into memories"},
-    {icon: "🌷", text: "Your strength, warmth and endless grace"},
-    {icon: "💕", text: "Simply — for being perfectly, wonderfully you"},
-    {icon: "🌸", text: "Your beauty and charm"},
+    {icon: "🌟", text: "Твій сміх робить все яскравішим"},
+    {icon: "🤍", text: "Як ти турбуєшся про мене. 13 лютого я не забуду"},
+    {icon: "✨", text: "Як ти перетворюєш звичайні дні на спогади"},
+    {icon: "🌷", text: "Твоя стійкість, наполегливість, тепло що ти даруєш"},
+    {icon: "💕", text: "За те, як ти кохаєш"},
+    {icon: "🌸", text: "За твою красу, душевну та зовнішню"},
 ];
 
 const FLOWER_CARDS = [
     {
         image: bouquetSoft,
-        alt: "Soft peach roses and blue hydrangeas bouquet",
-        title: "Gentle as you are",
-        text: "Like these soft petals — delicate, beautiful, and impossible not to adore. Every shade reminds me of the quiet tenderness you bring into my life.",
+        alt: "Soft peach tulips and blue hydrangeas bouquet",
+        title: "Палаючі, як наше з тобою щире кохання",
+        text: "Квіти як ти, розкішні, свіжі, тривалі, немовби наші почуття одне до одних",
         accent: "from-blue-100 to-rose-100",
         titleColor: "text-rose-800",
         textColor: "text-rose-900",
@@ -51,8 +51,8 @@ const FLOWER_CARDS = [
     {
         image: bouquetRed,
         alt: "Deep crimson peony tulips bouquet",
-        title: "Passionately, deeply, yours",
-        text: "Bold, full of life, and breathtakingly beautiful — just like the love I have for you. Rich, deep, and more wonderful with every passing day.",
+        title: "Ніжні, та кольору тієї холодної зими",
+        text: "Пам'ятаю нашу розмову про шеріденс, та себе, котрий через годину був готовий заради тебе на щось більше, ніж слова",
         accent: "from-rose-100 to-red-100",
         titleColor: "text-rose-800",
         textColor: "text-rose-900",
@@ -362,7 +362,7 @@ function Envelope({onOpen}: { onOpen: () => void }) {
                         : "0 4px 14px rgba(225,29,72,0.3)",
                 }}
             >
-        Open my letter to you 💕
+        Мій лист для тебе 💕
       </span>
         </button>
     );
@@ -399,20 +399,20 @@ export default function Home() {
                 <div className="animate-heartbeat text-7xl mb-6 drop-shadow-xl">💝</div>
 
                 <h1 className="shimmer-text text-5xl md:text-7xl font-bold leading-tight tracking-tight animate-fade-up">
-                    Forever Julia
+                    Назавжди Юлія
                 </h1>
 
 
                 <p className="text-rose-700 text-lg md:text-xl font-light max-w-md mt-4 leading-relaxed animate-fade-up-1">
-                    Happy Valentine's Day, my love.
+                    Вітаю з манікюром, моя люба!
                     <br/>
-                    Every moment with you is my favourite story.
+                    Кожен момент з тобою є моєю улюбленою історією.
                 </p>
 
                 <div className="mt-10 animate-fade-up-2">
                     {letterOpen ? (
                         <p className="text-rose-500 text-sm tracking-widest uppercase animate-fade-up">
-                            💌 Letter opened — read on below ↓
+                            💌 Приємного читання ^_^ ↓
                         </p>
                     ) : (
                         <Envelope onOpen={() => setLetterOpen(true)}/>
@@ -425,28 +425,30 @@ export default function Home() {
                 <section className="relative z-10 w-full max-w-2xl px-6 pb-10 animate-fade-up">
                     <div className="glass-card rounded-3xl p-8 md:p-12 shadow-2xl">
                         <p className="text-rose-400 text-xs uppercase tracking-widest font-semibold mb-6">
-                            A letter from my heart 💌
+                            Від щирого серця 💌
                         </p>
                         <p
                             className="text-cursive text-rose-900 text-6xl font-semibold mb-4"
                             style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                         >
-                            My dearest Julia,
+                            Моя дорога Юлія,
                         </p>
                         <p
-                            className="text-rose-800 text-6xl leading-8 mb-4"
+                            className="text-rose-800 text-6xl leading-10 mb-4"
                             style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                         >
 
-                            Some love stories start with a glance — ours started with something rarer: a quiet certainty
-                            that the world was gentler, warmer, and more beautiful with you in it.
+                            Деякі історії кохання починаються з першого погляду - наша ж почалася з чогось рідкіснішого:
+                            тихої впевненості, що світ буде ніжнішим, теплішим і прекраснішим з тобою в ньому.
                         </p>
-                        <p className="text-rose-800 text-base md:text-lg leading-loose mb-6">
-                            Thank you for your laughter, your patience, and for choosing to share your life with me.
-                            You are not just my Valentine — you are my home.
+                        <p className="text-rose-800 text-6xl leading-10 mb-6"
+                           style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}>
+                            Дякую тобі за твій сміх, твоє неповторне мявкання, і за те, що ти дозволила бути з тобою,
+                            Ти моя єдина. Та, для якої я почав писати вірші
                         </p>
-                        <p className="text-rose-600 text-lg italic">
-                            With all my love, always and forever. 🌹
+                        <p className="text-rose-600 text-6xl leading-10"
+                           style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}>
+                            З усією моєю любов&#39;ю, завжди і назавжди <span className="text-2xl">🌹</span>
                         </p>
                     </div>
                 </section>
@@ -456,9 +458,8 @@ export default function Home() {
             <section className="relative z-10 w-full max-w-3xl px-6 animate-fade-up-3">
                 <h2
                     className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-8"
-                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
                 >
-                    Why I love you 🌷
+                    Чому я кохаю тебе🌷
                 </h2>
 
                 <ul className="grid md:grid-cols-2 gap-4">
@@ -515,9 +516,9 @@ export default function Home() {
                 <div className="glass-card rounded-3xl p-8 text-center shadow-xl">
                     <p className="text-rose-300 text-4xl mb-4">"</p>
                     <p className="text-rose-800 text-lg md:text-xl italic leading-relaxed">
-                        You are every reason, every hope and every dream I've ever had.
+                        Ти - моя причина, надія, спогад, муза, та досягнення
                     </p>
-                    <p className="text-rose-400 text-sm mt-4 tracking-wider">— Nicholas Sparks</p>
+                    <p className="text-rose-400 text-sm mt-4 tracking-wider">- Твій Влад</p>
                 </div>
             </section>
 
