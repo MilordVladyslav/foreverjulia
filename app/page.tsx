@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import bouquetSoft from "./images/image_2026-04-16_02-13-50.png";
 import bouquetRed from "./images/image_2026-04-16_02-14-59.png";
@@ -74,6 +74,183 @@ const MOMENTS = [
         text: "Every toast is a promise — to more evenings like this, more laughter, more love. To us, always.",
     },
 ];
+
+
+function AreYouMine() {
+    const [agreed, setAgreed] = useState(false);
+    const [noPos, setNoPos] = useState({top: 50, left: 60});
+
+    function escapeButton() {
+        // Keep trying until we find a position far enough from current
+        let top: number, left: number;
+        do {
+            top = 8 + Math.random() * 72; // 8%–80% (keep inside box)
+            left = 8 + Math.random() * 68; // 8%–76% (account for button width)
+        } while (
+            Math.abs(top - noPos.top) < 20 &&
+            Math.abs(left - noPos.left) < 20
+            );
+        setNoPos({top, left});
+    }
+
+    return (
+        <div className="glass-card rounded-3xl p-8 md:p-12 text-center shadow-xl">
+            {agreed ? (
+                <div className="animate-fade-up">
+                    <div className="text-6xl mb-4 animate-heartbeat">💝</div>
+                    <p
+                        className="shimmer-text text-3xl md:text-4xl font-bold mb-3"
+                        style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                    >
+                        I knew it! 🌹
+                    </p>
+                    <p className="text-rose-700 text-lg mt-2">
+                        Forever and always, my love. 💕
+                    </p>
+                </div>
+            ) : (
+                <>
+                    <p
+                        className="text-rose-800 text-2xl md:text-3xl font-bold mb-2"
+                        style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                    >
+                        Will you be mine? 💌
+                    </p>
+                    <p className="text-rose-600 text-base mb-10">
+                        Choose wisely — only one answer is correct 😉
+                    </p>
+
+                    {/* Button arena — fixed height so the No button has room to roam */}
+                    <div className="relative w-full h-36">
+                        {/* Yes */}
+                        <button
+                            onClick={() => setAgreed(true)}
+                            className="cursor-pointer absolute px-8 py-3 rounded-full text-white font-semibold text-lg shadow-lg transition-transform duration-150 hover:scale-110 active:scale-95"
+                            style={{
+                                top: "50%",
+                                left: "28%",
+                                transform: "translate(-50%, -50%)",
+                                background: "linear-gradient(135deg, #e11d48, #fb7185)",
+                                boxShadow: "0 4px 18px rgba(225,29,72,0.35)",
+                            }}
+                        >
+                            Yes! 💕
+                        </button>
+
+                        {/* No — runs away on hover */}
+                        <button
+                            onMouseEnter={escapeButton}
+                            onTouchStart={escapeButton}
+                            className="absolute px-8 py-3 rounded-full font-semibold text-base shadow-md cursor-default select-none"
+                            style={{
+                                top: `${noPos.top}%`,
+                                left: `${noPos.left}%`,
+                                transform: "translate(-50%, -50%)",
+                                background: "rgba(251,113,133,0.15)",
+                                border: "1px solid rgba(251,113,133,0.3)",
+                                color: "#be123c",
+                                transition: "top 0s, left 0s", // instant jump — no easing
+                            }}
+                        >
+                            No 🙈
+                        </button>
+                    </div>
+                </>
+            )}
+        </div>
+    );
+}
+
+function AgreementSection() {
+    const [agreed, setAgreed] = useState(false);
+    const [noPos, setNoPos] = useState<{ x: number; y: number } | null>(null);
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    function runAway() {
+        const container = containerRef.current;
+        if (!container) return;
+        const {width, height} = container.getBoundingClientRect();
+        const btnW = 130, btnH = 48;
+        const newX = Math.random() * (width - btnW);
+        const newY = Math.random() * (height - btnH);
+        setNoPos({x: newX, y: newY});
+    }
+
+    if (agreed) {
+        return (
+            <div className="glass-card rounded-3xl p-10 text-center shadow-2xl animate-fade-up">
+                <div className="text-6xl mb-4 animate-heartbeat">💝</div>
+                <p
+                    className="shimmer-text text-3xl md:text-4xl font-bold mb-3"
+                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                >
+                    I knew it! 🎉
+                </p>
+                <p className="text-rose-800 text-lg mt-2">
+                    You are my favourite person in the whole world. 💕
+                </p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="glass-card rounded-3xl p-8 md:p-12 shadow-2xl text-center">
+            <p className="text-rose-400 text-xs uppercase tracking-widest font-semibold mb-4">
+                One important question 💌
+            </p>
+            <p
+                className="text-rose-900 text-2xl md:text-3xl font-bold mb-2"
+                style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+            >
+                Will you be my Valentine?
+            </p>
+            <p className="text-rose-700 text-base mb-10">
+                Think carefully — there is only one right answer 😏
+            </p>
+
+            {/* Button arena */}
+            <div
+                ref={containerRef}
+                className="relative w-full"
+                style={{height: "10rem"}}
+            >
+                {/* Agree — centered, always stays put */}
+                <button
+                    onClick={() => setAgreed(true)}
+                    className="cursor-pointer absolute rounded-full text-white text-base font-semibold px-8 py-3 shadow-lg transition-all duration-200 hover:scale-105"
+                    style={{
+                        background: "linear-gradient(135deg, #e11d48, #fb7185)",
+                        boxShadow: "0 4px 18px rgba(225,29,72,0.35)",
+                        left: "50%",
+                        top: "50%",
+                        transform: "translate(-50%, -50%)",
+                    }}
+                >
+                    Yes, of course! 💕
+                </button>
+
+                {/* Disagree — runs away on hover */}
+                <button
+                    onMouseEnter={runAway}
+                    onFocus={runAway}
+                    className="absolute rounded-full text-rose-400 text-base font-semibold px-8 py-3 shadow-md select-none"
+                    style={{
+                        background: "rgba(255,255,255,0.7)",
+                        border: "1.5px solid rgba(251,113,133,0.3)",
+                        transition: "left 0s, top 0s",   // instant teleport, no sliding
+                        left: noPos ? `${noPos.x}px` : "50%",
+                        top: noPos ? `${noPos.y}px` : "75%",
+                        transform: noPos ? "none" : "translate(-50%, 0)",
+                        cursor: "default",
+                    }}
+                >
+                    No... 🙈
+                </button>
+            </div>
+        </div>
+    );
+}
+
 
 /* ── Slideshow component ── */
 function MomentSlideshow() {
@@ -521,6 +698,17 @@ export default function Home() {
                     Our moments 🕯️
                 </h2>
                 <MomentSlideshow/>
+            </section>
+
+
+            <section className="relative z-10 w-full max-w-xl px-6 mt-16 animate-fade-up-4">
+                <h2
+                    className="text-center text-3xl md:text-4xl font-bold text-rose-800 mb-10"
+                    style={{fontFamily: "var(--font-letta-rillok), Georgia, serif", fontStyle: "italic"}}
+                >
+                    One last question 💭
+                </h2>
+                <AreYouMine/>
             </section>
 
 
